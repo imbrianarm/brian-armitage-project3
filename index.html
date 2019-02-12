@@ -8,14 +8,44 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <h1>hai there</h1>
+  <h1>Mimi's War</h1>
+  <div class="playing-area">
+    <div class="card">
+      <div class="front">
+        <img src="images/red-back.png" alt="Back of playing card">
+      </div>
+      <div class="back player-back">
+        
+      </div>
+      <div class="text-box">
+        <h3 class="player-card-text"></h3>
+      </div>
+    </div>
 
+    <div class="card">
+      <div class="front">
+        <img src="images/red-back.png" alt="Back of playing card">
+      </div>
+      <div class="back dealer-back">
+        
+      </div>
+      <div class="text-box">
+        <h3 class="dealer-card-text"></h3>
+      </div>
+    </div>
 
-  <form action="">
-    <input type="submit" value="Deal!">
-  </form>
+    <form action="">
+      <input type="submit" class="deal-button" value="Deal!">
+    </form>
+    <button>Play Again!</button>
+
+    <h2 class="message">
+
+    </h2>
+  </div>
 
   <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
