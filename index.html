@@ -6,46 +6,58 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mimi's War</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <h1>Mimi's War</h1>
-  <div class="playing-area">
-    <div class="card">
-      <div class="front">
-        <img src="images/red-back.png" alt="Back of playing card">
+  <div class="wrapper">
+    <header>
+      <div class="mimi-face animated pulse infinite">
+        <img src="images/mimi-face.png" alt="Mimi's Face">
       </div>
-      <div class="back player-back">
-        
+      <h1>Mimi's War</h1>
+      <div class="mimi-face animated pulse infinite">
+        <img src="images/mimi-face.png" alt="Mimi's Face">
       </div>
-      <div class="text-box">
-        <h3 class="player-card-text"></h3>
+    </header>
+    <div class="playing-area">
+      <div class="card">
+        <div class="front">
+          <img src="images/red-back.png" alt="Back of playing card">
+        </div>
+        <div class="back player-back">
+          
+        </div>
+        <div class="text-box">
+          <h3 class="player-card-text"></h3>
+        </div>
       </div>
+
+      <div class="card">
+        <div class="front">
+          <img src="images/red-back.png" alt="Back of playing card">
+        </div>
+        <div class="back dealer-back">
+          
+        </div>
+        <div class="text-box">
+          <h3 class="dealer-card-text"></h3>
+        </div>
+      </div>
+
+      <form action="">
+        <input type="submit" class="deal-button" value="Deal!">
+      </form>
+      <button>Play Again!</button>
+
+      <h2 class="message">
+
+      </h2>
     </div>
 
-    <div class="card">
-      <div class="front">
-        <img src="images/red-back.png" alt="Back of playing card">
-      </div>
-      <div class="back dealer-back">
-        
-      </div>
-      <div class="text-box">
-        <h3 class="dealer-card-text"></h3>
-      </div>
-    </div>
-
-    <form action="">
-      <input type="submit" class="deal-button" value="Deal!">
-    </form>
-    <button>Play Again!</button>
-
-    <h2 class="message">
-
-    </h2>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="script.js"></script>
   </div>
-
-  <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-  <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>

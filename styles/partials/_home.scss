@@ -1,10 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header img {
+  animation: rotate 3s linear infinite;
+}
+
+.mimi-face {
+  width: 10%;
+}
+
 .playing-area {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .card {
-  width: 20%;
+  width: 15%;
+  // margin: 5%;
 }
 
 img {

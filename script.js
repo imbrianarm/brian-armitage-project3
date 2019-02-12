@@ -10,7 +10,7 @@ $(document).ready(function () {
   //https://nnattawat.github.io/flip/
   
   //DEFINE VARIABLE FOR PLAYER'S NAME
-  const playerName = prompt(`Hi, what is your name?`);
+  const playerName = prompt(`Welcome to Mimi's War... name please?`);
 
   //START CLICK ACTION
   $('form').on('submit', function (event) {
