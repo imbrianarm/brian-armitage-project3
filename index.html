@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="wrapper">
+    <!-- HEADER STARTS HERE -->
     <header>
       <div class="mimi-face animated pulse infinite">
         <img src="images/mimi-face.png" alt="Mimi's Face">
@@ -20,40 +21,43 @@
         <img src="images/mimi-face.png" alt="Mimi's Face">
       </div>
     </header>
-    <div class="playing-area">
-      <div class="card">
-        <div class="front">
-          <img src="images/red-back.png" alt="Back of playing card">
+    <!-- HEADER ENDS HERE -->
+    <main>
+      <div class="playing-area">
+        <div class="card">
+          <div class="front">
+            <img src="images/red-back.png" alt="Back of playing card">
+          </div>
+          <div class="back player-back">
+            
+          </div>
+          <div class="text-box">
+            <h3 class="player-card-text"></h3>
+          </div>
         </div>
-        <div class="back player-back">
-          
+
+        <div class="card">
+          <div class="front">
+            <img src="images/red-back.png" alt="Back of playing card">
+          </div>
+          <div class="back dealer-back">
+            
+          </div>
+          <div class="text-box">
+            <h3 class="dealer-card-text"></h3>
+          </div>
         </div>
-        <div class="text-box">
-          <h3 class="player-card-text"></h3>
-        </div>
+
+        <form action="">
+          <input type="submit" class="deal-button" value="Deal!">
+        </form>
+        <button>Play Again!</button>
+
+        <h2 class="message">
+
+        </h2>
       </div>
-
-      <div class="card">
-        <div class="front">
-          <img src="images/red-back.png" alt="Back of playing card">
-        </div>
-        <div class="back dealer-back">
-          
-        </div>
-        <div class="text-box">
-          <h3 class="dealer-card-text"></h3>
-        </div>
-      </div>
-
-      <form action="">
-        <input type="submit" class="deal-button" value="Deal!">
-      </form>
-      <button>Play Again!</button>
-
-      <h2 class="message">
-
-      </h2>
-    </div>
+    </main>
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>

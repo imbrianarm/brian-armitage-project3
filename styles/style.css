@@ -147,16 +147,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden; }
 
 body {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3))), url(../images/felt-background.jpg);
-  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/felt-background.jpg);
-  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/felt-background.jpg);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/felt-background.jpg);
+  background-image: url(../images/felt-background.jpg);
   background-size: cover;
   height: 100vh; }
 
 .wrapper {
   max-width: 1600px;
-  width: 100%; }
+  width: 100%;
+  margin: 0 auto; }
 
 header {
   display: -webkit-box;
@@ -189,3 +187,6 @@ header img {
 
 img {
   width: 100%; }
+
+.text-box > h3 {
+  text-align: center; }
