@@ -1,7 +1,7 @@
 $(document).ready(function () { 
   
   //HIDE PLAY AGAIN BUTTON
-  $('button').hide();
+  $('.play-again-button').hide();
 
   //ENABLE FLIP JQUERY PLUGIN - CHANGING TRIGGER TO MANUAL - TO BE DEFINED ON CLICK BELOW
   $(".card").flip({
@@ -13,7 +13,7 @@ $(document).ready(function () {
   const playerName = prompt(`Welcome to Mimi's War... name please?`);
 
   //START CLICK ACTION
-  $('form').on('submit', function (event) {
+  $('.deal-button').on('click', function (event) {
     event.preventDefault();
 
     //TRIGGERING CARD FLIP ON BUTTON CLICK
@@ -23,10 +23,10 @@ $(document).ready(function () {
     $(this).hide();
 
     //SHOW PLAY AGAIN BUTTON
-    $('button').show();
+    $('.play-again-button').show();
 
     //DEFINING PLAY AGAIN BUTTON CLICK ACTION
-    $('button').on('click', function (event) {
+    $('.play-again-button').on('click', function (event) {
       event.preventDefault();
 
       //FLIP CARDS BACK
@@ -36,7 +36,7 @@ $(document).ready(function () {
       $(this).hide();
 
       //SHOW DEAL BUTTON
-      $('form').show();
+      $('.deal-button').show();
 
       //REMOVING PLAYER CARD TEXT FROM BACK OF CARD
       $('.player-card-text').html(``);
