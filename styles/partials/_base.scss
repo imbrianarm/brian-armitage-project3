@@ -1,4 +1,10 @@
+html {
+  font-size: 125%;
+}
+
 body {
+  font-family: $primary-font;
+  color: $primary-color;
   background-image: url(../images/felt-background.jpg);
   background-size: cover;
   height: 100vh;

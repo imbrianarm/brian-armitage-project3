@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mimi's War</title>
+  <title>Mimi's Casino War</title>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div class="wrapper">
@@ -16,13 +17,17 @@
       <div class="mimi-face animated pulse infinite">
         <img src="images/mimi-face.png" alt="Mimi's Face">
       </div>
-      <h1>Mimi's War</h1>
+      <h1>Mimi's Casino War</h1>
       <div class="mimi-face animated pulse infinite">
         <img src="images/mimi-face.png" alt="Mimi's Face">
       </div>
     </header>
     <!-- HEADER ENDS HERE -->
     <main>
+      <form class="nameForm">
+        <input class="name" type="text" placeholder="Name please..." required>
+        <input type="submit" class="button" value="Submit!">
+      </form>
       <div class="playing-area">
           <div class="card">
             <div class="front">
@@ -48,10 +53,8 @@
             </div>
           </div>
         
-        <form action="">
-          <input type="submit" class="deal-button" value="Deal!">
-        </form>
-        <button class="play-again-button">Play Again!</button>
+        <button class="deal-button button">Deal!</button>
+        <button class="play-again-button button">Play Again!</button>
 
         <h2 class="message">
 
