@@ -8,21 +8,33 @@ $(document).ready(function () {
     trigger: 'manual'
   }); //https://nnattawat.github.io/flip/
   
-  //DEFINE VARIABLE FOR PLAYER'S NAME
+  //DEFINE VARIABLE FOR PLAYER'S NAME AND AGE
   let playerName;
+  let playerAge;
+
+  //CLEARING NAME AND AGE UPON PAGE LOAD
+  $('.name').val('');
+  $('.age').val('');
 
   //HIDING MAIN PLAYING AREA UNTIL NAME IS SUBMITTED
   $('.playing-area').hide();
 
-  //DEFINING ACTION ONCE NAME IS SUBMITTED
+  //DEFINING ACTION ONCE NAME AND AGE ARE SUBMITTED
   //PLAYER NAME FROM FORM VALUE PUSHED TO PLAYERNAME VARIABLE
-  //HIDE NAME FORM ONCE SUBMITTED
-  //SHOW MAIN PLAING AREA ONCE NAME SUBMITTED
+  //PLAYER AGE FROM FORM PUSHED TO PLAYERAGE VARIABLE
+  //IF UNDER 19, WILL RECEIVE ERROR MESSAGE
+  //IF OVER 19, WILL PROCEED TO HIDE FORM ONCE SUBMITTED
+  //SHOW MAIN PLAING AREA ONCE NAME AND AGE SUBMITTED
   $('form').on('submit', function (event) {
     event.preventDefault();
     playerName = $('.name').val();
+    playerAge = $('.age').val();
+    if (playerAge >= 19) {
     $('form').hide();
     $('.playing-area').show();
+    } else {
+      $('.aside-message').html(`Sorry ${playerName}, you must be 19 to enter the casino`);
+    }
   });
   
   //START CLICK ACTION
