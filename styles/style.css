@@ -151,23 +151,31 @@ html {
 
 body {
   font-family: "Indie Flower", cursive;
-  color: #ff0000;
+  color: #fff;
   background-image: url(../images/felt-background.jpg);
   background-size: cover;
   height: 100vh; }
 
 .wrapper {
   max-width: 1600px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto; }
+
+h2 {
+  text-align: center;
+  display: block; }
 
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly; }
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 7.5rem; }
 
 header img {
   -webkit-animation: rotate 3s linear infinite;
@@ -176,25 +184,56 @@ header img {
 .mimi-face {
   width: 10%; }
 
+main {
+  height: calc(100vh - 7.5rem); }
+
+aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
 form {
   text-align: center; }
+
+input {
+  width: 50%;
+  margin: .5rem 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; }
 
 .playing-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start; }
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: calc(100vh - 15rem); }
 
 .card {
-  width: 15%; }
+  width: 20%; }
+
+.back {
+  height: 0%; }
 
 img {
   width: 100%; }
 
+.button-area {
+  height: 7.5rem; }
+
 .text-box > h3 {
-  text-align: center; }
+  text-align: center;
+  -ms-flex-item-align: end;
+  align-self: flex-end; }

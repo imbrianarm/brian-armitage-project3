@@ -25,47 +25,42 @@
     <!-- HEADER ENDS HERE -->
     <main>
       <aside>
+        <h2 class="aside-heading">Please input your name and age to enter the casino...</h2>
         <form class="nameForm">
           <input class="name" type="text" placeholder="Name or Alias" required>
-          <input class="age" type="number" placeholder="Age Please..." required>
+          <input class="age" type="number" placeholder="Age Please..." pattern="[0-9]" required>
           <input type="submit" class="button" value="Submit!">
         </form>
         <h2 class="aside-message">
         
         </h2>
       </aside>
-      <div class="playing-area">
-          <div class="card">
-            <div class="front">
-              <img src="images/red-back.png" alt="Back of playing card">
-            </div>
-            <div class="back dealer-back">
-              
-            </div>
-            <div class="text-box">
-              <h3 class="dealer-card-text"></h3>
-            </div>
+      <section class="playing-area">
+        <div class="card">
+          <div class="front">
+            <img src="images/red-back.png" alt="Back of playing card">
           </div>
+          <div class="back dealer-back">
+              
+          </div>
+        </div>
           
-          <div class="card">
-            <div class="front">
-              <img src="images/red-back.png" alt="Back of playing card">
-            </div>
-            <div class="back player-back">
-              
-            </div>
-            <div class="text-box">
-              <h3 class="player-card-text"></h3>
-            </div>
+        <div class="card">
+          <div class="front">
+            <img src="images/red-back.png" alt="Back of playing card">
           </div>
-        
-        <button class="deal-button button">Deal!</button>
-        <button class="play-again-button button">Play Again!</button>
+          <div class="back player-back">
+                    
+          </div>
+        </section>
+        <section class="button-area">
+          <button class="deal-button button">Deal!</button>
+          <button class="play-again-button button">Play Again!</button>
 
-        <h2 class="message">
+          <h2 class="message">
 
-        </h2>
-      </div>
+          </h2>
+        </section>
     </main>
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>

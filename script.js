@@ -16,8 +16,8 @@ $(document).ready(function () {
   $('.name').val('');
   $('.age').val('');
 
-  //HIDING MAIN PLAYING AREA UNTIL NAME IS SUBMITTED
-  $('.playing-area').hide();
+  //HIDING MAIN PLAYING AREA AND BUTTON UNTIL NAME IS SUBMITTED
+  $('section').hide();
 
   //DEFINING ACTION ONCE NAME AND AGE ARE SUBMITTED
   //PLAYER NAME FROM FORM VALUE PUSHED TO PLAYERNAME VARIABLE
@@ -30,8 +30,8 @@ $(document).ready(function () {
     playerName = $('.name').val();
     playerAge = $('.age').val();
     if (playerAge >= 19) {
-    $('form').hide();
-    $('.playing-area').show();
+    $('aside').hide();
+    $('section').show();
     } else {
       $('.aside-message').html(`Sorry ${playerName}, you must be 19 to enter the casino`);
     }
@@ -117,10 +117,18 @@ $(document).ready(function () {
     let dealerCard = `${faceValue[dealerFace]} of ${suitValue[dealerSuit]}`;
 
     //ADDING PLAYER CARD IMAGE WITH ALT TEXT TO BACK OF CARD
-    $('.player-back').html(`<img src="images/cards/${playerFace}-${playerSuit}.png" alt="${playerCard}">`);
+    $('.player-back').html(`<img src="images/cards/${playerFace}-${playerSuit}.png" alt="${playerCard}">
+      <div class="text-box">
+        <h3 class="player-card-text"></h3>
+      </div>
+    `);
 
     //ADDING DEALER CARD IMAGE WITH ALT TEXT TO BACK OF CARD
-    $('.dealer-back').html(`<img src="images/cards/${dealerFace}-${dealerSuit}.png" alt="${dealerCard}">`);
+    $('.dealer-back').html(`<img src="images/cards/${dealerFace}-${dealerSuit}.png" alt="${dealerCard}">
+      <div class="text-box">
+        <h3 class="dealer-card-text"></h3>
+      </div>
+    `);
 
     //ADDING PLAYER CARD TEXT TO BACK OF CARD
     $('.player-card-text').html(`${playerCard}`);

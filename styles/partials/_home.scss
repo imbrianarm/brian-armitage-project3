@@ -1,6 +1,9 @@
+//HEADER
 header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  height: 7.5rem;
 }
 
 header img {
@@ -11,25 +14,65 @@ header img {
   width: 10%;
 }
 
+main {
+  height: calc(100vh - 7.5rem);
+}
+
+//NAME/AGE FORM
+
+aside {
+  display: flex;
+  flex-direction: column;
+
+}
 form {
   text-align: center;
 }
 
+input {
+  width: 50%;
+  margin: .5rem 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+ 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+} 
+// Solution found at https://w3reign.com/how-to-disable-input-type-number-field-arrows-from-css/
+
+//MAIN PLAYING AREA
 .playing-area {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-around;
+  height: calc(100vh - 15rem);
 }
 
 .card {
-  width: 15%;
-  // margin: 5%;
+  width: 20%;
+}
+
+.back {
+  height: 0%;
 }
 
 img {
   width: 100%;
 }
 
+//BUTTON/MESSAGE AREA
+
+.button-area {
+  height: 7.5rem;
+}
+
 .text-box > h3 {
   text-align: center;
+  align-self: flex-end;
 }
