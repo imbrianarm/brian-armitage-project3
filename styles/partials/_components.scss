@@ -1,0 +1,17 @@
+//BUTTON SETUP
+
+.button {
+  // font-family: ;
+  // color: ;
+  letter-spacing: .095rem;
+  border: 0;
+  background: red;
+  border-radius: 20px;
+  padding: .5rem 1.6rem;
+  transition: all .1s;
+}
+
+.button:hover { 
+  background-color: blue; 
+  transform: scale(1.1); 
+}

@@ -86,10 +86,13 @@ myApp.dealButtonAction = () => {
     //DEFINE ACTION FOR TIE SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
     if (myApp.playerFace > myApp.dealerFace) {
       $('.message').html(`Congrats ${myApp.playerName}, you win! Please play again!!!`);
+      $('.main-image').html(`<img src="images/mimi-lose.jpg" alt="Mimi is angry she lost">`);
     } else if (myApp.playerFace < myApp.dealerFace) {
       $('.message').html(`Sorry ${myApp.playerName}, you lose. Please play again!!!`);
+      $('.main-image').html(`<img src="images/mimi-win.jpg" alt="Mimi is happy she won">`);
     } else {
       $('.message').html(`It looks like it is a tie ${myApp.playerName}.  Please play again!!!`);
+      $('.main-image').html(`<img src="images/mimi-tie.jpeg" alt="Mimi is chillin, it's a tie">`);
     }
     
     //SELECT A RANDOM PLAYER CARD SUIT FROM 1 - 4 (4 SUITS)
@@ -158,6 +161,11 @@ myApp.dealButtonAction = () => {
   });
 };
 
+//DEFINE ELEMENT CLEARING FUNCTION
+myApp.clearElement = (element) => {
+  $(element).html('');
+}
+
 //DEFINING PLAY AGAIN BUTTON CLICK ACTION
 //FLIP CARDS BACK
 //HIDE PLAY AGAIN BUTTON ON CLICK
@@ -171,8 +179,9 @@ myApp.playAgainButtonAction = () => {
     $('.card').flip(false);
     myApp.hideFunction(this);
     myApp.showFunction('.deal-button');
-    $('.player-card-text').html(``);
-    $('.dealer-card-text').html(``);
-    $('.message').html(``);
+    myApp.clearElement('.player-card-text');
+    myApp.clearElement('.dealer-card-text');
+    myApp.clearElement('.message');
+    myApp.clearElement('.main-image');
   })
 }
