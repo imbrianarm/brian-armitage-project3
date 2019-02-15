@@ -1,92 +1,104 @@
+const myApp = {};
+
 $(document).ready(function () { 
-  
-  //HIDE PLAY AGAIN BUTTON
-  $('.play-again-button').hide();
+  myApp.init();
+});
 
-  //ENABLE FLIP JQUERY PLUGIN - CHANGING TRIGGER TO MANUAL - TO BE DEFINED ON CLICK BELOW
-  $(".card").flip({
-    trigger: 'manual'
-  }); //https://nnattawat.github.io/flip/
-  
-  //DEFINE VARIABLE FOR PLAYER'S NAME AND AGE
-  let playerName;
-  let playerAge;
-
+myApp.init = () => {
+  //HIDE PLAY AGAIN BUTTON AND MAIN PLAYING AREA ON PAGE LOAD UNTIL NAME/AGE SUBMITTED
+  myApp.hideFunction('.play-again-button');
+  myApp.hideFunction('section');
   //CLEARING NAME AND AGE UPON PAGE LOAD
-  $('.name').val('');
-  $('.age').val('');
+  myApp.clearForm('.name');
+  myApp.clearForm('.age');
+  //CALL NAME FORM SUBMIT BUTTON EVENT LISTENER
+  myApp.nameFormSubmit();
+  //DEAL BUTTON ACTION EVENT LISTENER
+  myApp.dealButtonAction();
+  //PLAY AGAIN BUTTON ACTION EVENT LISTENER
+  myApp.playAgainButtonAction();
+};
 
-  //HIDING MAIN PLAYING AREA AND BUTTON UNTIL NAME IS SUBMITTED
-  $('section').hide();
+//DEFINE HIDE FUNCTION
+myApp.hideFunction = (hide) => {
+  $(hide).hide();
+}
 
-  //DEFINING ACTION ONCE NAME AND AGE ARE SUBMITTED
-  //PLAYER NAME FROM FORM VALUE PUSHED TO PLAYERNAME VARIABLE
-  //PLAYER AGE FROM FORM PUSHED TO PLAYERAGE VARIABLE
-  //IF UNDER 19, WILL RECEIVE ERROR MESSAGE
-  //IF OVER 19, WILL PROCEED TO HIDE FORM ONCE SUBMITTED
-  //SHOW MAIN PLAING AREA ONCE NAME AND AGE SUBMITTED
+//DEFINE SHOW FUNCTION
+myApp.showFunction = (show) => {
+  $(show).show();
+}
+
+//DEFINE FORM CLEAR FUNCTION
+myApp.clearForm = (form) => {
+  $(form).val('');
+}
+
+//ENABLE FLIP JQUERY PLUGIN - CHANGING TRIGGER TO MANUAL - TO BE DEFINED ON CLICK BELOW
+$(".card").flip({
+  trigger: 'manual'
+}); //https://nnattawat.github.io/flip/
+
+
+//DEFINING ACTION ONCE NAME AND AGE ARE SUBMITTED
+//PLAYER NAME FROM FORM VALUE PUSHED TO PLAYERNAME VARIABLE
+//PLAYER AGE FROM FORM PUSHED TO PLAYERAGE VARIABLE
+//IF UNDER 19, WILL RECEIVE ERROR MESSAGE
+//IF OVER 19, WILL PROCEED TO HIDE FORM ONCE SUBMITTED
+//SHOW MAIN PLAING AREA ONCE NAME AND AGE SUBMITTED
+myApp.nameFormSubmit = () => {
   $('form').on('submit', function (event) {
     event.preventDefault();
-    playerName = $('.name').val();
-    playerAge = $('.age').val();
-    if (playerAge >= 19) {
-    $('aside').hide();
-    $('section').show();
+    myApp.playerName = $('.name').val();
+    myApp.playerAge = $('.age').val();
+    if (myApp.playerAge >= 19) {
+      myApp.hideFunction('aside');
+      myApp.showFunction('section');
     } else {
-      $('.aside-message').html(`Sorry ${playerName}, you must be 19 to enter the casino`);
+      $('.aside-message').html(`Sorry ${myApp.playerName}, you must be 19 to enter the casino`);
     }
   });
-  
-  //START CLICK ACTION
-  //TRIGGERING CARD FLIP ON BUTTON CLICK
-  //HIDE DEAL BUTTON ON CLICK
-  //SHOW PLAY AGAIN BUTTON
+}
+
+//START CLICK ACTION
+//TRIGGERING CARD FLIP ON BUTTON CLICK
+//HIDE DEAL BUTTON ON CLICK
+//SHOW PLAY AGAIN BUTTON
+myApp.dealButtonAction = () => {
   $('.deal-button').on('click', function (event) {
     event.preventDefault();
     $('.card').flip(true);
-    $(this).hide();
-    $('.play-again-button').show();
-
-    //DEFINING PLAY AGAIN BUTTON CLICK ACTION
-    //FLIP CARDS BACK
-    //HIDE PLAY AGAIN BUTTON ON CLICK
-    //SHOW DEAL BUTTON
-    //REMOVING PLAYER CARD TEXT FROM BACK OF CARD
-    //REMOVING DEALER CARD TEXT FROM BACK OF CARD
-    //REMOVE MAIN RESULT MESSAGE
-    $('.play-again-button').on('click', function (event) {
-      event.preventDefault();
-      $('.card').flip(false);
-      $(this).hide();
-      $('.deal-button').show();
-      $('.player-card-text').html(``);
-      $('.dealer-card-text').html(``);
-      $('.message').html(``);
-    })
+    myApp.hideFunction(this);
+    myApp.showFunction('.play-again-button');
+    
+    //DEFINING RANDOM INTEGER GENERATOR
+    myApp.random = (number) => {
+      return Math.floor(Math.random() * number);
+    }
 
     //SELECT A RANDOM PLAYER CARD FACE FROM 1 - 13 (TWO THROUGH ACE)
-    let playerFace = Math.floor(Math.random() * 13);
+    myApp.playerFace = myApp.random(13);
     //SELECT A RANDOM DEALER CARD FACE FROM 1 - 13 (TWO THROUGH ACE)
-    let dealerFace = Math.floor(Math.random() * 13);
+    myApp.dealerFace = myApp.random(13);
     
     //DEFINE ACTION FOR PLAYER WIN SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
     //DEFINE ACTION FOR DEALER WIN SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
     //DEFINE ACTION FOR TIE SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
-    if (playerFace > dealerFace) {
-      $('.message').html(`Congrats ${playerName}, you win! Please play again!!!`);
-    } else if (playerFace < dealerFace) {
-      $('.message').html(`Sorry ${playerName}, you lost. Please play again!!!`);
+    if (myApp.playerFace > myApp.dealerFace) {
+      $('.message').html(`Congrats ${myApp.playerName}, you win! Please play again!!!`);
+    } else if (myApp.playerFace < myApp.dealerFace) {
+      $('.message').html(`Sorry ${myApp.playerName}, you lose. Please play again!!!`);
     } else {
-      $('.message').html(`It looks like it is a tie ${playerName}.  Please play again!!!`);
+      $('.message').html(`It looks like it is a tie ${myApp.playerName}.  Please play again!!!`);
     }
-
+    
     //SELECT A RANDOM PLAYER CARD SUIT FROM 1 - 4 (4 SUITS)
-    let playerSuit = Math.floor(Math.random() * 4);
+    myApp.playerSuit = myApp.random(4);
     //SELECT A RANDOM DEALER CARD SUIT FROM 1 - 4 (4 SUITS)
-    let dealerSuit = Math.floor(Math.random() * 4);
-
+    myApp.dealerSuit = myApp.random(4);
+    
     //ARRAY CONVERTING FACE VALUES TO ACTUAL CARD VALUES
-    const faceValue = [
+    myApp.faceValue = [
       "Two",
       "Three",
       "Four",
@@ -101,39 +113,66 @@ $(document).ready(function () {
       "King",
       "Ace"
     ];
-
+    
     //ARRAY CONVERTING SUIT VALUES TO ACTUAL SUITS
-    const suitValue = [
+    myApp.suitValue = [
       "Clubs",
       "Diamonds",
       "Hearts",
       "Spades"
     ];
-
+    
     //PLAYER ACTUAL CARD DEFINITION
-    let playerCard = `${faceValue[playerFace]} of ${suitValue[playerSuit]}`;
-
+    myApp.playerCard = `${myApp.faceValue[myApp.playerFace]} of ${myApp.suitValue[myApp.playerSuit]}`;
+    
     //DEALER ACTUAL CARD DEFINITION
-    let dealerCard = `${faceValue[dealerFace]} of ${suitValue[dealerSuit]}`;
+    myApp.dealerCard = `${myApp.faceValue[myApp.dealerFace]} of ${myApp.suitValue[myApp.dealerSuit]}`;
+    
+    //DEFINING CARD IMAGE PUSH TO CARD CONTAINER
+    myApp.cardPush = (user, face, suit, card) => {
+      $(`.${user}-back`).html(`
+      <img src="images/cards/${face}-${suit}.png" alt="${card}">
+      <div class="text-box">
+      <h3 class="${user}-card-text"></h3>
+      </div>
+      `);
+    };
 
     //ADDING PLAYER CARD IMAGE WITH ALT TEXT TO BACK OF CARD
-    $('.player-back').html(`<img src="images/cards/${playerFace}-${playerSuit}.png" alt="${playerCard}">
-      <div class="text-box">
-        <h3 class="player-card-text"></h3>
-      </div>
-    `);
-
+    myApp.cardPush('player', myApp.playerFace, myApp.playerSuit, myApp.playerCard);
     //ADDING DEALER CARD IMAGE WITH ALT TEXT TO BACK OF CARD
-    $('.dealer-back').html(`<img src="images/cards/${dealerFace}-${dealerSuit}.png" alt="${dealerCard}">
-      <div class="text-box">
-        <h3 class="dealer-card-text"></h3>
-      </div>
-    `);
+    myApp.cardPush('dealer', myApp.dealerFace, myApp.dealerSuit, myApp.dealerCard);
+    
+    //DEFINING PUSHING CARD TEXT MESSAGE
+    myApp.cardTextPush = (container, card) => {
+      $(`${container}`).html(`${card}`);
+    }
 
     //ADDING PLAYER CARD TEXT TO BACK OF CARD
-    $('.player-card-text').html(`${playerCard}`);
-
+    myApp.cardTextPush('.player-card-text', myApp.playerCard);
+    // $('.player-card-text').html(`${myApp.playerCard}`);
+    
     //ADDING DEALER CARD TEXT TO BACK OF CARD
-    $('.dealer-card-text').html(`${dealerCard}`);
+    myApp.cardTextPush('.dealer-card-text', myApp.dealerCard);
+    // $('.dealer-card-text').html(`${myApp.dealerCard}`);
+  });
+};
+
+//DEFINING PLAY AGAIN BUTTON CLICK ACTION
+//FLIP CARDS BACK
+//HIDE PLAY AGAIN BUTTON ON CLICK
+//SHOW DEAL BUTTON
+//REMOVING PLAYER CARD TEXT FROM BACK OF CARD
+//REMOVING DEALER CARD TEXT FROM BACK OF CARD
+//REMOVE MAIN RESULT MESSAGE
+myApp.playAgainButtonAction = () => {
+  $('.play-again-button').on('click', function (event) {
+    event.preventDefault();
+    $('.card').flip(false);
+    myApp.hideFunction(this);
+    myApp.showFunction('.deal-button');
+    $('.player-card-text').html(``);
+    $('.dealer-card-text').html(``);
+    $('.message').html(``);
   })
-});
+}
