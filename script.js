@@ -47,6 +47,7 @@ $(".card").flip({
 //IF UNDER 19, WILL RECEIVE ERROR MESSAGE
 //IF OVER 19, WILL PROCEED TO HIDE FORM ONCE SUBMITTED
 //SHOW HEADER AND MAIN PLAING AREA ONCE NAME AND AGE SUBMITTED
+//PLAY DOG BARKING SOUND
 myApp.nameFormSubmit = () => {
   $('form').on('submit', function (event) {
     event.preventDefault();
@@ -72,12 +73,21 @@ myApp.nameFormSubmit = () => {
 
 //START CLICK ACTION
 //TRIGGERING CARD FLIP ON BUTTON CLICK
+//PLAY CARD FLIP SOUND
 //HIDE DEAL BUTTON ON CLICK
 //SHOW PLAY AGAIN BUTTON
 myApp.dealButtonAction = () => {
   $('.deal-button').on('click', function (event) {
     event.preventDefault();
     $('.card').flip(true);
+
+    $('.playing-area').append(`
+    <audio autoplay>
+      <source src="audio/card-flip.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    `);
+    
     myApp.hideFunction(this);
     myApp.showFunction('.play-again-button');
     
