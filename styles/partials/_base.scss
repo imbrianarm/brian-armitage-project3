@@ -5,7 +5,8 @@ html {
 body {
   font-family: $primary-font;
   color: $primary-color;
-  background-image: url(../images/felt-background.jpg);
+  letter-spacing: .08rem;
+  background-color: $background-color;
   background-size: cover;
   height: 100vh;
 }
@@ -15,6 +16,12 @@ body {
   width: 80%;
   margin: 0 auto;
 } 
+
+h1 {
+  font-family: $secondary-font;
+  color: $accent-color;
+  font-size: 2.5rem;
+}
 
 h2 {
   text-align: center;

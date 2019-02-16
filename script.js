@@ -5,9 +5,10 @@ $(document).ready(function () {
 });
 
 myApp.init = () => {
-  //HIDE PLAY AGAIN BUTTON AND MAIN PLAYING AREA ON PAGE LOAD UNTIL NAME/AGE SUBMITTED
+  //HIDE PLAY AGAIN BUTTON, HEADER, AND MAIN PLAYING AREA ON PAGE LOAD UNTIL NAME/AGE SUBMITTED
   myApp.hideFunction('.play-again-button');
   myApp.hideFunction('section');
+  myApp.hideFunction('header');
   //CLEARING NAME AND AGE UPON PAGE LOAD
   myApp.clearForm('.name');
   myApp.clearForm('.age');
@@ -45,7 +46,7 @@ $(".card").flip({
 //PLAYER AGE FROM FORM PUSHED TO PLAYERAGE VARIABLE
 //IF UNDER 19, WILL RECEIVE ERROR MESSAGE
 //IF OVER 19, WILL PROCEED TO HIDE FORM ONCE SUBMITTED
-//SHOW MAIN PLAING AREA ONCE NAME AND AGE SUBMITTED
+//SHOW HEADER AND MAIN PLAING AREA ONCE NAME AND AGE SUBMITTED
 myApp.nameFormSubmit = () => {
   $('form').on('submit', function (event) {
     event.preventDefault();
@@ -54,6 +55,15 @@ myApp.nameFormSubmit = () => {
     if (myApp.playerAge >= 19) {
       myApp.hideFunction('aside');
       myApp.showFunction('section');
+      myApp.showFunction('header');
+      $('.playing-area').append(`
+      <audio autoplay>
+        <source src="audio/bark.mp3" type="audio/mpeg">
+        <source src="audio/bark.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+      `);
+      $('.zoomInRight h3').append(`<span>${myApp.playerName}'s</span> Card`);
     } else {
       $('.aside-message').html(`Sorry ${myApp.playerName}, you must be 19 to enter the casino`);
     }
@@ -86,13 +96,13 @@ myApp.dealButtonAction = () => {
     //DEFINE ACTION FOR TIE SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
     if (myApp.playerFace > myApp.dealerFace) {
       $('.message').html(`Congrats ${myApp.playerName}, you win! Please play again!!!`);
-      $('.main-image').html(`<img src="images/mimi-lose.jpg" alt="Mimi is angry she lost">`);
+      $('.main-image').html(`<img src="images/mimi-lose.jpg" class="animated fadeIn" alt="Mimi is angry she lost">`);
     } else if (myApp.playerFace < myApp.dealerFace) {
       $('.message').html(`Sorry ${myApp.playerName}, you lose. Please play again!!!`);
-      $('.main-image').html(`<img src="images/mimi-win.jpg" alt="Mimi is happy she won">`);
+      $('.main-image').html(`<img src="images/mimi-win.jpg" class="animated fadeIn" alt="Mimi is happy she won">`);
     } else {
       $('.message').html(`It looks like it is a tie ${myApp.playerName}.  Please play again!!!`);
-      $('.main-image').html(`<img src="images/mimi-tie.jpeg" alt="Mimi is chillin, it's a tie">`);
+      $('.main-image').html(`<img src="images/mimi-tie.jpeg" class="animated fadeIn" alt="Mimi is chillin, it's a tie">`);
     }
     
     //SELECT A RANDOM PLAYER CARD SUIT FROM 1 - 4 (4 SUITS)

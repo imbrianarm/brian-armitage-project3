@@ -150,9 +150,10 @@ html {
   font-size: 125%; }
 
 body {
-  font-family: "Indie Flower", cursive;
-  color: #fff;
-  background-image: url(../images/felt-background.jpg);
+  font-family: "Source Sans Pro", sans-serif;
+  color: #258ea6;
+  letter-spacing: .08rem;
+  background-color: #F7F7F7;
   background-size: cover;
   height: 100vh; }
 
@@ -160,6 +161,11 @@ body {
   max-width: 1600px;
   width: 80%;
   margin: 0 auto; }
+
+h1 {
+  font-family: "Oxygen", sans-serif;
+  color: #EE2C2C;
+  font-size: 2.5rem; }
 
 h2 {
   text-align: center;
@@ -172,15 +178,15 @@ img {
 .button {
   letter-spacing: .095rem;
   border: 0;
-  background: red;
+  background: #EE2C2C;
   border-radius: 20px;
-  padding: .5rem 1.6rem;
+  padding: .5rem 2.5rem;
   -webkit-transition: all .1s;
   -o-transition: all .1s;
   transition: all .1s; }
 
 .button:hover {
-  background-color: blue;
+  background-color: #ECC3BF;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1); }
@@ -196,10 +202,6 @@ header {
   align-items: center;
   height: 7.5rem; }
 
-header img {
-  -webkit-animation: rotate 3s linear infinite;
-  animation: rotate 3s linear infinite; }
-
 .mimi-face {
   width: 10%; }
 
@@ -213,42 +215,56 @@ aside {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 form {
   text-align: center; }
 
+aside img {
+  width: 20%;
+  margin: 0 auto; }
+
 input {
-  width: 50%;
   margin: .5rem 0; }
 
 input[type=text],
 input[type=number] {
-  color: #fff;
+  color: #258ea6;
   border: none;
-  border-bottom: .1rem solid orange;
-  background-color: saddlebrown;
-  padding: .75rem 0 .75rem .75rem; }
+  width: 50%;
+  border-bottom: 0.1rem solid #258ea6;
+  background-color: #F7F7F7;
+  padding: .75rem 0 .75rem .75rem;
+  letter-spacing: .08rem;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 input[type=text]:focus,
 input[type=number]:focus {
-  border: .1rem solid orange; }
+  border: 0.1rem solid #ECC3BF; }
+
+input[type=submit] {
+  display: block;
+  margin: .5rem auto; }
 
 input::-webkit-input-placeholder {
-  opacity: 1;
-  letter-spacing: .1rem; }
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: .08rem; }
 
 input:-ms-input-placeholder {
-  opacity: 1;
-  letter-spacing: .1rem; }
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: .08rem; }
 
 input::-ms-input-placeholder {
-  opacity: 1;
-  letter-spacing: .1rem; }
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: .08rem; }
 
 input::placeholder {
-  opacity: 1;
-  letter-spacing: .1rem; }
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: .08rem; }
 
 input[type=number] {
   -moz-appearance: textfield; }
@@ -274,9 +290,15 @@ input[type=number]::-webkit-outer-spin-button {
 .front > h3 {
   text-align: center; }
 
+.front span {
+  color: #EE2C2C; }
+
 .main-image {
   width: 40%;
   overflow: hidden; }
+
+.main-image img {
+  display: inline-block; }
 
 .back {
   height: 0%; }

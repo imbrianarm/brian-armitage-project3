@@ -2,16 +2,15 @@
 
 .button {
   // font-family: ;
-  // color: ;
   letter-spacing: .095rem;
   border: 0;
-  background: red;
+  background: $accent-color;
   border-radius: 20px;
-  padding: .5rem 1.6rem;
+  padding: .5rem 2.5rem;
   transition: all .1s;
 }
 
 .button:hover { 
-  background-color: blue; 
+  background-color: $secondary-accent; 
   transform: scale(1.1); 
 }

@@ -6,9 +6,9 @@ header {
   height: 7.5rem;
 }
 
-header img {
-  animation: rotate 3s linear infinite;
-}
+// header img {
+//   animation: rotate 1s linear infinite;
+// }
 
 .mimi-face {
   width: 10%;
@@ -23,16 +23,21 @@ main {
 aside {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
 }
 form {
   text-align: center;
 }
 
+aside img {
+  width: 20%;
+  margin: 0 auto;
+}
+
 //FORM SETUP 
 
 input {
-  width: 50%;
   margin: .5rem 0;
 }
 
@@ -40,21 +45,28 @@ input[type=text],
 input[type=number] {
   color: $primary-color;
   border: none;
-  border-bottom: .1rem solid orange;
-  background-color: saddlebrown;
+  width: 50%;
+  border-bottom: .1rem solid $primary-color;
+  background-color: $background-color;
   padding: .75rem 0 .75rem .75rem;
+  letter-spacing: .08rem;
+  box-shadow: none;
 }
 
 input[type=text]:focus,
 input[type=number]:focus {
-  border: .1rem solid orange;
+  border: .1rem solid $secondary-accent;
+}
+
+input[type=submit] {
+  display: block;
+  margin: .5rem auto;
 }
 
 input::placeholder {
-  // color: ;
-  opacity: 1;
-  // font-family: ;
-  letter-spacing: .1rem;
+  font-family: $primary-font;
+  letter-spacing: .08rem;
+  
 }
 
 input[type=number] {
@@ -85,9 +97,17 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
+.front span {
+  color: $accent-color;
+}
+
 .main-image {
   width: 40%;
   overflow: hidden;
+}
+
+.main-image img {
+  display: inline-block;
 }
 
 .back {
