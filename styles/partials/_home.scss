@@ -29,13 +29,6 @@ aside {
   grid-column: 1 / -1;
 }
 
-.aside-image { margin-top: 1rem; }
-
-aside img {
-  width: 20%;
-  margin: 0 auto;
-}
-
 form { text-align: center; }
 
 input { margin: .5rem 0; }
@@ -78,6 +71,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 } 
 // Solution found at https://w3reign.com/how-to-disable-input-type-number-field-arrows-from-css/
+
+.aside-message { color: $accent-color; }
 
 //MAIN PLAYING AREA
 .playing-area {
