@@ -7,23 +7,18 @@ header {
 }
 
 .mimi-face {
-  width: 4rem;
+  width: 4.5rem;
 
-  @include breakpoint-tablet-small {
-      width: 3rem;
-  }
+  @include breakpoint-tablet-small { width: 3rem; }
 }
 
 //MAIN AREA
 main {
   grid-row: 2 / -1;
   display: grid;
-  // grid-template-rows: 60vh max-content 25vh max-content;
   grid-template-rows: 65vh max-content 20vh max-content;
 
-  @include breakpoint-tablet-port {
-    grid-template-rows: 50vh max-content 25vh max-content;;
-  }
+  @include breakpoint-tablet-port { grid-template-rows: 50vh max-content 25vh max-content; }
 }
 
 //NAME/AGE FORM
@@ -34,26 +29,16 @@ aside {
   grid-column: 1 / -1;
 }
 
-.aside-image {
-  margin-top: 1rem;
-}
-
-.aside-heading {
-  width: 100%;
-}
+.aside-image { margin-top: 1rem; }
 
 aside img {
   width: 20%;
   margin: 0 auto;
 }
 
-form {
-  text-align: center;
-}
+form { text-align: center; }
 
-input {
-  margin: .5rem 0;
-}
+input { margin: .5rem 0; }
 
 input[type=text],
 input[type=number] {
@@ -65,14 +50,10 @@ input[type=number] {
   display: block;
   margin: .5rem auto;
   border-bottom: .1rem solid $primary-color;
-  background-color: $background-color;
+  background-color:rgba(0, 0, 0, 0);
   padding: .75rem 0 .75rem .75rem;
   letter-spacing: .08rem;
   box-shadow: none;
-}
-
-input:focus {
-  border: .1rem solid $primary-color;
 }
 
 input[type=submit] {
@@ -80,14 +61,14 @@ input[type=submit] {
   margin: 1rem auto;
 }
 
+input:focus { border: .1rem solid $accent-color; }
+
 input::placeholder {
   font-family: $primary-font;
   letter-spacing: .08rem;
 }
 
-input[type=number] {
-    -moz-appearance:textfield;
-}
+input[type=number] { -moz-appearance:textfield; }
  
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -105,33 +86,25 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 2rem 0;
   grid-row: 1 / 2;
 
-  @include breakpoint-tablet-small {
-      padding: 1rem 0;
-  }
+  @include breakpoint-tablet-small { padding: 1rem 0; }
 
   @include breakpoint-phone {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
   }
 
-  @include breakpoint-phone-small {
-    padding-top: 1rem;
-  }
+  @include breakpoint-phone-small { padding-top: 1rem; }
 }
 
 .card {
   width: 80%;
-  max-width: 10rem;
+  max-width: 12rem;
   margin: 0 auto;
 
-  @include breakpoint-tablet-port {
-    max-width: 8rem;
-  }
+  @include breakpoint-tablet-port { max-width: 8rem; }
 }
 
-.front span {
-  color: $accent-color;
-}
+.front h3 { color: $accent-color; }
 
 .text-box > h3 {
   text-align: center;
@@ -144,30 +117,18 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: start;
 
-  @include breakpoint-desktop {
-    align-items: center;
-  }
+  @include breakpoint-desktop { align-items: center; }
 
-  @include breakpoint-phone {
-      display: none;
-  }
+  @include breakpoint-phone { display: none; }
 }
 
 .main-image h2 {
   padding: 7.5rem 2rem 0 2rem;
 
-  @include breakpoint-desktop {
-    padding: 0;
-  }
+  @include breakpoint-desktop { padding: 0; }
 }
 
-.main-image img {
-  display: inline-block;
-}
-
-.back {
-  height: 0%;
-}
+// .back { height: 0%; }
 
 //BUTTON/MESSAGE AREA
 
@@ -178,6 +139,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .play-again-button,
-.deal-button {
-  margin-top: 0;
-}
+.deal-button { margin-top: 0; }
+
+.win { color: $tertiary-accent; }
+
+.lose { color: $accent-color; }

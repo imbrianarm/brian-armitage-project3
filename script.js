@@ -64,7 +64,7 @@ myApp.nameFormSubmit = () => {
         Your browser does not support the audio element.
       </audio>
       `);
-      $('.zoomInRight h3').append(`<span>${myApp.playerName}'s</span> Card`);
+      $('.zoomInRight h3').append(`${myApp.playerName}'s Card`);
     } else {
       $('.aside-message').html(`Sorry ${myApp.playerName}, you must be 19 to enter the casino`);
     }
@@ -99,17 +99,19 @@ myApp.dealButtonAction = () => {
     //SELECT A RANDOM DEALER CARD FACE FROM 1 - 13 (TWO THROUGH ACE)
     myApp.dealerFace = myApp.random(13);
     
-    //DEFINE ACTION FOR PLAYER WIN SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
-    //DEFINE ACTION FOR DEALER WIN SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
-    //DEFINE ACTION FOR TIE SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
+    //DEFINE ACTION FOR PLAYER WIN SCENARIO AND PRINT RESULT MESSAGE TO SCREEN IN GREEN
+    //DEFINE ACTION FOR DEALER WIN SCENARIO AND PRINT RESULT MESSAGE TO SCREEN IN RED
+    //DEFINE ACTION FOR TIE SCENARIO AND PRINT RESULT MESSAGE TO SCREEN IN DEFAULT COLOR
     if (myApp.playerFace > myApp.dealerFace) {
+      $('.button-area h2').addClass('win');
       $('.message').html(`Congrats ${myApp.playerName}, you win! Please play again!!!`);
       $('.main-image').html(`<img src="images/mimi-win-${myApp.random(2)}.jpg" class="animated fadeIn" alt="Mimi is happy, you won">`);
     } else if (myApp.playerFace < myApp.dealerFace) {
+      $('.button-area h2').addClass('lose');
       $('.message').html(`Sorry ${myApp.playerName}, you lose. Please play again!!!`);
       $('.main-image').html(`<img src="images/mimi-lose-${myApp.random(2)}.jpg" class="animated fadeIn" alt="Mimi is angry, you lost">`);
     } else {
-      $('.message').html(`It looks like it is a tie ${myApp.playerName}.  Please play again!!!`);
+      $('.message').html(`It's a tie ${myApp.playerName}.  Please play again!!!`);
       $('.main-image').html(`<img src="images/mimi-tie-${myApp.random(2)}.jpg" class="animated fadeIn" alt="Mimi is chillin, it's a tie">`);
     }
     
@@ -191,6 +193,7 @@ myApp.clearElement = (element) => {
 //REMOVING PLAYER CARD TEXT FROM BACK OF CARD
 //REMOVING DEALER CARD TEXT FROM BACK OF CARD
 //REMOVE MAIN RESULT MESSAGE
+//REMOVE WIN/LOSE COLOR CLASS FROM MAIN MESSAGE
 myApp.playAgainButtonAction = () => {
   $('.play-again-button').on('click', function (event) {
     event.preventDefault();
@@ -201,5 +204,7 @@ myApp.playAgainButtonAction = () => {
     myApp.clearElement('.dealer-card-text');
     myApp.clearElement('.message');
     myApp.clearElement('.main-image');
+    $('.button-area h2').removeClass('win');
+    $('.button-area h2').removeClass('lose');
   })
 }

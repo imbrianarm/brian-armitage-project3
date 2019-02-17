@@ -1,12 +1,13 @@
-html {
-  font-size: 125%;
-}
+html { font-size: 125%; }
 
 body {
   font-family: $primary-font;
   color: $primary-color;
   letter-spacing: .08rem;
-  background-color: $background-color;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.90),
+    rgba(255, 255, 255, 0.90)),
+    url(../images/background.jpg);
   background-size: cover;
   height: 100vh;
 }
@@ -18,9 +19,7 @@ body {
   display: grid;
   grid-template-rows: 15vh 85vh;
 
-  @include breakpoint-phone-small {
-    width: 90%;
-  }
+  @include breakpoint-phone-small { width: 90%; }
 } 
 
 h1, h2, h3 {
@@ -30,40 +29,22 @@ h1, h2, h3 {
 
 h1 {
   font-family: $secondary-font;
-  color: $accent-color;
+  color: $tertiary-accent;
   font-size: 2.5rem;
 
-  @include breakpoint-tablet-port {
-    font-size: 2rem;
-  }
+  @include breakpoint-tablet-port { font-size: 2rem; }
 
-  @include breakpoint-phone-big {
-    font-size: 1.5rem;
-  }
+  @include breakpoint-phone-big { font-size: 1.5rem; }
 
-  @include breakpoint-phone {
-    font-size: 1.25rem;
-  }
+  @include breakpoint-phone { font-size: 1.25rem; }
 }
 
 h2 {
-
-  @include breakpoint-tablet-port {
-    font-size: 1.25rem;
-  }
+  @include breakpoint-tablet-port { font-size: 1.25rem; }
 }
 
 h3 {
-
-  @include breakpoint-tablet-port {
-    font-size: 1rem;
-  }
+  @include breakpoint-tablet-port { font-size: 1rem; }
 }
 
-h3 {
-  text-align: center;
-}
-
-img {
-  width: 100%;
-}
+img { width: 100%; }
