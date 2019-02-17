@@ -79,15 +79,13 @@ myApp.nameFormSubmit = () => {
 myApp.dealButtonAction = () => {
   $('.deal-button').on('click', function (event) {
     event.preventDefault();
-    $('.card').flip(true);
-
     $('.playing-area').append(`
     <audio autoplay>
       <source src="audio/card-flip.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     `);
-    
+    $('.card').flip(true);
     myApp.hideFunction(this);
     myApp.showFunction('.play-again-button');
     
