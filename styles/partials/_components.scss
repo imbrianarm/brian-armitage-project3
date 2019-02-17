@@ -1,16 +1,20 @@
 //BUTTON SETUP
 
 .button {
-  // font-family: ;
   letter-spacing: .095rem;
   border: 0;
   background: $accent-color;
   border-radius: 20px;
   padding: .5rem 2.5rem;
   transition: all .1s;
+  margin: 1rem 0;
 }
 
 .button:hover { 
   background-color: $secondary-accent; 
   transform: scale(1.1); 
+}
+
+.button:focus {
+  border: .1rem solid $primary-color;
 }

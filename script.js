@@ -104,13 +104,13 @@ myApp.dealButtonAction = () => {
     //DEFINE ACTION FOR TIE SCENARIO AND PRINT RESULT MESSAGE TO SCREEN
     if (myApp.playerFace > myApp.dealerFace) {
       $('.message').html(`Congrats ${myApp.playerName}, you win! Please play again!!!`);
-      $('.main-image').html(`<img src="images/mimi-lose.jpg" class="animated fadeIn" alt="Mimi is angry she lost">`);
+      $('.main-image').html(`<img src="images/mimi-win-${myApp.random(2)}.jpg" class="animated fadeIn" alt="Mimi is happy, you won">`);
     } else if (myApp.playerFace < myApp.dealerFace) {
       $('.message').html(`Sorry ${myApp.playerName}, you lose. Please play again!!!`);
-      $('.main-image').html(`<img src="images/mimi-win.jpg" class="animated fadeIn" alt="Mimi is happy she won">`);
+      $('.main-image').html(`<img src="images/mimi-lose-${myApp.random(2)}.jpg" class="animated fadeIn" alt="Mimi is angry, you lost">`);
     } else {
       $('.message').html(`It looks like it is a tie ${myApp.playerName}.  Please play again!!!`);
-      $('.main-image').html(`<img src="images/mimi-tie.jpeg" class="animated fadeIn" alt="Mimi is chillin, it's a tie">`);
+      $('.main-image').html(`<img src="images/mimi-tie-${myApp.random(2)}.jpg" class="animated fadeIn" alt="Mimi is chillin, it's a tie">`);
     }
     
     //SELECT A RANDOM PLAYER CARD SUIT FROM 1 - 4 (4 SUITS)
