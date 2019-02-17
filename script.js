@@ -72,7 +72,6 @@ myApp.nameFormSubmit = () => {
 }
 
 //START CLICK ACTION
-//TRIGGERING CARD FLIP ON BUTTON CLICK
 //PLAY CARD FLIP SOUND
 //HIDE DEAL BUTTON ON CLICK
 //SHOW PLAY AGAIN BUTTON
@@ -85,7 +84,6 @@ myApp.dealButtonAction = () => {
       Your browser does not support the audio element.
     </audio>
     `);
-    $('.card').flip(true);
     myApp.hideFunction(this);
     myApp.showFunction('.play-again-button');
     
@@ -178,6 +176,9 @@ myApp.dealButtonAction = () => {
     //ADDING DEALER CARD TEXT TO BACK OF CARD
     myApp.cardTextPush('.dealer-card-text', myApp.dealerCard);
     // $('.dealer-card-text').html(`${myApp.dealerCard}`);
+
+    //TRIGGER CARD FLIP
+    $('.card').flip(true);
   });
 };
 
