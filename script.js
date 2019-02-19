@@ -207,5 +207,6 @@ myApp.playAgainButtonAction = () => {
     myApp.clearElement('.main-image');
     $('.button-area h2').removeClass('win');
     $('.button-area h2').removeClass('lose');
+    $('audio').remove();
   })
 }
