@@ -219,7 +219,7 @@ img {
   transform: scale(1.1); }
 
 .button:focus {
-  border: 0.1rem solid #CD2626; }
+  border: .1rem solid #000; }
 
 header {
   display: -webkit-box;
@@ -268,6 +268,9 @@ aside {
   justify-content: center;
   grid-column: 1 / -1; }
 
+aside h2 {
+  margin-bottom: 1rem; }
+
 form {
   text-align: center; }
 
@@ -292,10 +295,10 @@ input[type=number] {
 
 input[type=submit] {
   display: block;
-  margin: 1rem auto; }
+  margin: 2rem auto; }
 
 input:focus {
-  border: 0.1rem solid #CD2626; }
+  border: 0.1rem solid #258ea6; }
 
 input::-webkit-input-placeholder {
   font-family: "Source Sans Pro", sans-serif;

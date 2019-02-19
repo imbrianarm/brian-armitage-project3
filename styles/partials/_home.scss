@@ -29,6 +29,10 @@ aside {
   grid-column: 1 / -1;
 }
 
+aside h2 {
+  margin-bottom: 1rem;
+}
+
 form { text-align: center; }
 
 input { margin: .5rem 0; }
@@ -51,10 +55,10 @@ input[type=number] {
 
 input[type=submit] {
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
-input:focus { border: .1rem solid $accent-color; }
+input:focus { border: .1rem solid $primary-color; }
 
 input::placeholder {
   font-family: $primary-font;
