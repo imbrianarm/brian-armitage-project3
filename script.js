@@ -195,6 +195,7 @@ myApp.clearElement = (element) => {
 //REMOVING DEALER CARD TEXT FROM BACK OF CARD
 //REMOVE MAIN RESULT MESSAGE
 //REMOVE WIN/LOSE COLOR CLASS FROM MAIN MESSAGE
+//REMOVE AUDIO TAGS FROM HTML
 myApp.playAgainButtonAction = () => {
   $('.play-again-button').on('click', function (event) {
     event.preventDefault();
